@@ -1,3 +1,4 @@
+
 .search-bar {
     display: block;
 }
@@ -6,20 +7,156 @@
     height: 55px;
     display: flex;
     flex-direction: row;
+    /* using flexbox */
+    justify-content: space-between;
+    /* use position fixed to have header stick to the top of page */
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-block-color: rgb(238, 238, 238);
+    z-index: 100;
 }
 
 .left-section {
-    background-color: orangered;
-    width: 150px;
+    /* add display flex in order for align items to work */
+    display: flex; 
+    align-items: center;
+}
+
+.hamburger-menu {
+    height: 23px;
+    margin-left: 24px;
+    margin-right: 24px;
+}
+
+.youtube-logo {
+    height: 19px;
 }
 
 .middle-section {
-    background-color: rgb(166, 255, 0);
     flex: 1;
     margin-left: 70px;
+    margin-right: 35px;
+    max-width: 500px;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    /* stretches the items to fit into the div */
+    flex: 1;
+    height: 36px;
+    padding-left: 10px;
+    font-size: 16px;
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(200, 199, 199);
+    border-radius: 2px;
+    box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);
+    /* width 0 lets the search bar shrink with page */
+    width: 0;
+}
+
+.search-bar::placeholder {
+    font-family: Roboto, Arial;
+    font-size: 15px;
+    color: rgb(183, 183, 183);
+}
+
+.search-button {
+    height: 40px;
+    width: 66px;
+    background-color: rgb(248, 248, 248);
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(200, 199, 199);
+    border-radius: 2px;
+    margin-left: -1px;
+    margin-right: 10px;
+    position: relative;
+    cursor: pointer;
+}
+
+.search-button .tooltip {
+    position: absolute;
+    background-color: brown;
+    color: white;
+    padding: 4px 8px 4px 8px;
+    border-radius: 2px;
+    font-size: 12px;
+    bottom: -25px;
+    opacity: 0;
+    transition: opacity 0.4s;
+    /* hover will not work when you hover over just the tooltip and not the button */
+    pointer-events: none;
+}
+
+.search-button:hover .tooltip {
+    opacity: 1;
+}
+
+.search-icon {
+    height: 23px;
+    margin-top: 4px;
+}
+
+.voice-button {
+    height: 40px;
+    width: 40px;
+    border-radius: 20px;
+    border: none;
+    background-color: rgb(250, 250, 250);
+}
+
+.voice-icon {
+    height: 23px;
+    margin-top: 4px;
 }
 
 .right-section {
-    background-color: rgb(85, 83, 83);
-    width: 200px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* flex shrink prevents contents from shrinking when using flex box */
+    flex-shrink: 0;
+}
+
+.upload-icon {
+    height: 23px;
+}
+
+.youtube-apps {
+    height: 23px;
+}
+
+.notification-icon {
+    height: 23px;
+}
+
+.notification-icon-container {
+    position: relative;
+}
+
+.notification-number {
+    position: absolute;
+    top: -1px;
+    right: -3px;
+    background-color: rgb(179, 4, 4);
+    color: white;
+    font-family: Roboto, Arial;
+    font-size: 10px;
+    padding: 1px 3.5px 1px 3.5px;
+    border-radius: 10px
+    ;
+}
+
+.current-user-picture {
+    height: 29px;
+    border-radius: 16px;
+    margin-right: 20px;
 }
